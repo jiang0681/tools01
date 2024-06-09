@@ -1,0 +1,39 @@
+Yunzai-Bot多开
+2022年08月04日
+１复制文件夹
+  
+首先复制整个文件夹，如果你看了后面的内容知道那些不用复制，可以选择性的复制。
+
+２删除多余文件
+
+首先复制原来的文件，删去要软连接的文件夹，否则文件报错已存在。
+
+# rm[选项] 文件或目录选项：
+
+-f：强制删除（force），和 -i 选项相反，使用 -f，系统将不再询问，而是直接删除目标文件或目录。
+
+-i：和 -f 正好相反，在删除文件或目录之前，系统会给出提示信息，使用 -i 可以有效防止不小心删除有用的文件或目录。
+
+-r：递归删除，主要用于删除目录，可删除指定目录及包含的所有内容，包括所有的子目录和文件。
+
+３建立软链接
+
+第一个机器人叫Yunzai-Bot,第二个叫Yunzai-Bot２时候
+
+Example：图个方便
+
+ln -s /root/Yunzai-Bot/lib/example /root/Yunzai-Bot2/lib
+
+//example共享
+
+Resources：资源文件夹可以共享
+
+ln -s /root/Yunzai-Bot/resources /root/Yunzai-Bot2
+
+Plugins：插件可以共享
+
+ln -s /root/Yunzai-Bot/plugins /root/Yunzai-Bot2
+
+node_modules：node模块包100%建议共享
+
+ln -s /root/Yunzai-Bot/node_modules /root/Yunzai-Bot2
